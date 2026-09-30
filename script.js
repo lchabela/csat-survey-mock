@@ -1,8 +1,6 @@
-const COMPLETION_URL =
-  'https://docwell.test/survey/complete';
+const COMPLETION_URL = 'https://docwell.app/survey/complete';
 
-const CANCELLATION_URL =
-  'https://docwell.test/survey/cancel';
+const CANCELLATION_URL = 'https://docwell.app/survey/cancel';
 
 document
   .getElementById('complete')
