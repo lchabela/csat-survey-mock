@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
 
     <title>ObGyn Hub CSAT Survey Mock</title>
@@ -14,21 +13,33 @@
   </head>
 
   <body>
-    <main>
-      <h1>ObGyn Hub Survey</h1>
-
-      <p class="intro">
-        Please tell us about your experience using the ObGyn Hub Mobile App.
-      </p>
+    <main class="survey">
+      <header class="survey-header">
+        <p class="eyebrow">ObGyn Hub</p>
+        <h1>We'd love your feedback</h1>
+        <p class="intro">
+          Please tell us about your experience using the ObGyn Hub Mobile App.
+        </p>
+      </header>
 
       <form id="survey">
-        <fieldset>
-          <legend>
-            1. How satisfied are you with the ease of use of the ObGyn Hub
-            Mobile App?
-          </legend>
+        <!-- Question 1 -->
+        <section class="question">
+          <div class="question-heading">
+            <span class="question-number">1</span>
 
-          <div class="scale">
+            <h2>
+              How satisfied are you with the ease of use of the ObGyn Hub
+              Mobile App?
+            </h2>
+          </div>
+
+          <div class="scale-labels">
+            <span>Not at all satisfied</span>
+            <span>Very satisfied</span>
+          </div>
+
+          <div class="scale" role="radiogroup" aria-label="Ease of use">
             <label>
               <input
                 type="radio"
@@ -59,20 +70,29 @@
               <span>5</span>
             </label>
           </div>
+        </section>
+
+        <!-- Question 2 -->
+        <section class="question">
+          <div class="question-heading">
+            <span class="question-number">2</span>
+
+            <h2>
+              How satisfied are you with the content and links/tools available
+              within the ObGyn Hub Mobile App?
+            </h2>
+          </div>
 
           <div class="scale-labels">
             <span>Not at all satisfied</span>
             <span>Very satisfied</span>
           </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>
-            2. How satisfied are you with the content and links/tools available
-            within the ObGyn Hub Mobile App?
-          </legend>
-
-          <div class="scale">
+          <div
+            class="scale"
+            role="radiogroup"
+            aria-label="Content and tools"
+          >
             <label>
               <input
                 type="radio"
@@ -103,18 +123,18 @@
               <span>5</span>
             </label>
           </div>
+        </section>
 
-          <div class="scale-labels">
-            <span>Not at all satisfied</span>
-            <span>Very satisfied</span>
+        <!-- Question 3 -->
+        <section class="question">
+          <div class="question-heading">
+            <span class="question-number">3</span>
+
+            <h2>
+              How much time does the ObGyn Hub Mobile App save you on average
+              per documentation access?
+            </h2>
           </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>
-            3. How much time does the ObGyn Hub Mobile App save you on average
-            per documentation access?
-          </legend>
 
           <div class="choices">
             <label>
@@ -124,48 +144,66 @@
                 value="less-than-1"
                 required
               />
-              Less than 1 minute
+              <span>Less than 1 minute</span>
             </label>
 
             <label>
               <input type="radio" name="timeSaved" value="1-5" />
-              1–5 minutes
+              <span>1–5 minutes</span>
             </label>
 
             <label>
               <input type="radio" name="timeSaved" value="6-10" />
-              6–10 minutes
+              <span>6–10 minutes</span>
             </label>
 
             <label>
               <input type="radio" name="timeSaved" value="11-20" />
-              11–20 minutes
+              <span>11–20 minutes</span>
             </label>
 
             <label>
               <input type="radio" name="timeSaved" value="21-30" />
-              21–30 minutes
+              <span>21–30 minutes</span>
             </label>
 
             <label>
-              <input type="radio" name="timeSaved" value="more-than-30" />
-              More than 30 minutes
+              <input
+                type="radio"
+                name="timeSaved"
+                value="more-than-30"
+              />
+              <span>More than 30 minutes</span>
             </label>
 
             <label>
               <input type="radio" name="timeSaved" value="none" />
-              I don’t save any time
+              <span>I don't save any time</span>
             </label>
           </div>
-        </fieldset>
+        </section>
 
-        <fieldset>
-          <legend>
-            4. How satisfied are you with the overall experience of using the
-            ObGyn Hub?
-          </legend>
+        <!-- Question 4 -->
+        <section class="question">
+          <div class="question-heading">
+            <span class="question-number">4</span>
 
-          <div class="scale">
+            <h2>
+              How satisfied are you with the overall experience of using the
+              ObGyn Hub?
+            </h2>
+          </div>
+
+          <div class="scale-labels">
+            <span>Not at all satisfied</span>
+            <span>Very satisfied</span>
+          </div>
+
+          <div
+            class="scale"
+            role="radiogroup"
+            aria-label="Overall experience"
+          >
             <label>
               <input
                 type="radio"
@@ -196,28 +234,28 @@
               <span>5</span>
             </label>
           </div>
+        </section>
 
-          <div class="scale-labels">
-            <span>Not at all satisfied</span>
-            <span>Very satisfied</span>
+        <!-- Question 5 -->
+        <section class="question">
+          <div class="question-heading">
+            <span class="question-number">5</span>
+
+            <div>
+              <h2>Any additional feedback or suggestions?</h2>
+              <span class="optional">Optional</span>
+            </div>
           </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>
-            5. Any additional feedback or suggestions?
-            <span class="optional">Optional</span>
-          </legend>
 
           <textarea
             name="feedback"
             rows="5"
             placeholder="Share any additional feedback..."
           ></textarea>
-        </fieldset>
+        </section>
 
         <div class="actions">
-          <button id="complete" type="submit">
+          <button type="submit">
             Submit Survey
           </button>
 
@@ -231,6 +269,7 @@
         </div>
       </form>
 
+      <!-- Development-only information -->
       <section class="debug">
         <h2>Mock Debug Info</h2>
 
