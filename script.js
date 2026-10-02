@@ -2,6 +2,13 @@ const COMPLETION_URL = 'https://docwell.app/survey/complete';
 const CANCELLATION_URL = 'https://docwell.app/survey/cancel';
 
 const params = new URLSearchParams(window.location.search);
+
+// Apply the requested theme. Default to light.
+const requestedTheme = params.get('theme')?.toLowerCase();
+const theme = requestedTheme === 'dark' ? 'dark' : 'light';
+
+document.documentElement.dataset.theme = theme;
+
 const paramsContainer = document.getElementById('query-params');
 
 if (params.size === 0) {
