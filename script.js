@@ -5,7 +5,10 @@ const params = new URLSearchParams(window.location.search);
 const paramsContainer = document.getElementById('query-params');
 
 if (params.size === 0) {
-  paramsContainer.innerHTML = '<p class="empty">No query parameters received.</p>';
+  const empty = document.createElement('p');
+  empty.className = 'empty';
+  empty.textContent = 'No query parameters received.';
+  paramsContainer.appendChild(empty);
 } else {
   for (const [key, value] of params.entries()) {
     const row = document.createElement('div');
@@ -23,8 +26,9 @@ if (params.size === 0) {
 }
 
 document
-  .getElementById('complete')
-  .addEventListener('click', () => {
+  .getElementById('survey')
+  .addEventListener('submit', event => {
+    event.preventDefault();
     window.location.href = COMPLETION_URL;
   });
 
